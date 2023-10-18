@@ -1,11 +1,12 @@
 package com.devsox.Altiora.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 
 import java.math.BigDecimal;
 import java.util.List;
-
+@Entity
 public class Articulo {
     @Id
     private String codigo;
@@ -15,7 +16,14 @@ public class Articulo {
     @ManyToMany(mappedBy = "articulos")
     private List<Orden> ordenes;
 
-    //Métodos getters y setters
+    public Articulo(String codigo, String nombre, BigDecimal precioUnitario) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precioUnitario = precioUnitario;
+    }
+    public  Articulo ()
+    {}
+//Métodos getters y setters
 
     public String getCodigo() {
         return codigo;

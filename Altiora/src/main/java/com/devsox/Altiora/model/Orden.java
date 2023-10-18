@@ -1,14 +1,12 @@
 package com.devsox.Altiora.model;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class Orden {
     @Id
     private String codigo;
@@ -23,6 +21,15 @@ public class Orden {
 
 
     //Métodos getters y setters
+
+    public Orden() {
+    }
+
+    public Orden(String codigo, Date fecha, Cliente cliente) {
+        this.codigo = codigo;
+        this.fecha = fecha;
+        this.cliente = cliente;
+    }
 
     public String getCodigo() {
         return codigo;
