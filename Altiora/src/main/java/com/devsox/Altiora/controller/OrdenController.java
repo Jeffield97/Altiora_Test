@@ -1,2 +1,4 @@
-package com.devsox.Altiora.controller;public class OrdenController {
+package com.devsox.Altiora.controller;
+
+public class OrdenController {
 }

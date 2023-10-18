@@ -1,2 +1,4 @@
-package com.devsox.Altiora.controller;public class ArticuloController {
+package com.devsox.Altiora.controller;
+
+public class ArticuloController {
 }
