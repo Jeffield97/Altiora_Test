@@ -20,7 +20,7 @@ public class ClienteViewController {
         return "Cliente/formulario";
     }
 
-    @GetMapping("/clientes/{id}/editar")
+    @GetMapping("/clientes/editar/{id}")
     public String mostrarFormularioEditar(@PathVariable Long id, Model model) {
         Cliente cliente = clienteRepository.findById(id).orElse(null);
         if (cliente == null) {

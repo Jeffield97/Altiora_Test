@@ -28,7 +28,7 @@ public class ClienteController {
         return "redirect:/clientes";
     }
 
-    @GetMapping("/clientes/eliminar")
+    @PostMapping("/eliminar")
     public String eliminarCliente(@RequestParam("id") Long clienteId) {
         System.out.println("Eliminandooooooooo!!!");
         // Lógica para eliminar el cliente por su ID
