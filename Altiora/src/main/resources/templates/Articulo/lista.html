@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Lista de Artículos</title>
 </head>
 <body>
-$END$
+<h1>Lista de Artículos</h1>
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Precio Unitario</th>
+        <th>Órdenes</th>
+    </tr>
+    <tr th:each="articulo : ${articulos}">
+        <td th:text="${articulo.codigo}"></td>
+        <td th:text="${articulo.nombre}"></td>
+        <td th:text="${articulo.precioUnitario}"></td>
+        <td>
+            <ul>
+                <li th:each="orden : ${articulo.ordenes}">
+                    <span th:text="${orden.codigo}"></span>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

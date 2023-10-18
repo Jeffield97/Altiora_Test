@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Lista de Clientes</title>
 </head>
 <body>
-$END$
+<h1>Lista de Clientes</h1>
+
+<table>
+    <!-- Otras filas y columnas -->
+    <tr th:each="cliente : ${clientes}">
+        <td th:text="${cliente.id}"></td>
+        <!-- Otras columnas -->
+        <td>
+            <a th:href="@{'/clientes/editar/' + ${cliente.id}}">Editar</a>
+            <form th:action="@{/clientes/eliminar}" method="post">
+                <input type="hidden" th:name="id" th:value="${cliente.id}" />
+                <button type="submit">Eliminar</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<a href="/clientes/nuevo">Agregar nuevo</a>
 </body>
 </html>

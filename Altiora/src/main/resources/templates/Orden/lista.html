@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Lista de Órdenes</title>
 </head>
 <body>
-$END$
+<h1>Lista de Órdenes</h1>
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Fecha</th>
+        <th>Cliente</th>
+        <th>Artículos</th>
+    </tr>
+    <tr th:each="orden : ${ordenes}">
+        <td th:text="${orden.codigo}"></td>
+        <td th:text="${orden.fecha}"></td>
+        <td th:text="${orden.cliente.nombre}"></td>
+        <td>
+            <ul>
+                <li th:each="articulo : ${orden.articulos}">
+                    <span th:text="${articulo.nombre}"></span>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
