@@ -6,6 +6,7 @@ import jakarta.persistence.ManyToMany;
 
 import java.math.BigDecimal;
 import java.util.List;
+
 @Entity
 public class Articulo {
     @Id
@@ -21,8 +22,9 @@ public class Articulo {
         this.nombre = nombre;
         this.precioUnitario = precioUnitario;
     }
-    public  Articulo ()
-    {}
+
+    public Articulo() {
+    }
 //Métodos getters y setters
 
     public String getCodigo() {

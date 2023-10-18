@@ -3,11 +3,11 @@ package com.devsox.Altiora.model;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
 public class Cliente {
-    //Propiedades de la tabla cliente
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,15 +27,14 @@ public class Cliente {
         this.apellido = apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Orden> ordenes = new ArrayList<>();
 
     //Métodos getters y setters
 
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
     public Long getId() {
         return id;
@@ -60,4 +59,6 @@ public class Cliente {
     public void setOrdenes(List<Orden> ordenes) {
         this.ordenes = ordenes;
     }
+
+
 }

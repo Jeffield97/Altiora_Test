@@ -31,6 +31,11 @@ public class Orden {
         this.cliente = cliente;
     }
 
+    public Orden(String codigo, Date fecha) {
+        this.codigo = codigo;
+        this.fecha = fecha;
+    }
+
     public String getCodigo() {
         return codigo;
     }

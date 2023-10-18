@@ -7,6 +7,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+/**
+ * Se declaran las rutas a las que se puede acceder y
+ * las plantillas que se retornan en cada una
+ * */
 public class OrdenViewController {
     @Autowired
     private OrdenRepository ordenRepository;
